@@ -172,3 +172,42 @@ class FinanceCalculator {
   }
 
 }
+
+function update() {
+  calculator.price = Number(document.getElementById("price").value);
+  calculator.percent_down = Number(
+    document.getElementById("percent_down").value);
+  calculator.int_rate = Number(document.getElementById("int_rate").value);
+  calculator.term_years = Number(document.getElementById("term_years").value);
+  calculator.income = Number(document.getElementById("income").value);
+  calculator.insurance = Number(document.getElementById("insurance").value);
+  calculator.tax_rate = Number(document.getElementById("tax_rate").value);
+  document.getElementById("piti").innerHTML = calculator.piti().toFixed(2);
+  document.getElementById("expense_over_income").innerHTML = (
+    calculator.piti() / (calculator.income / 12.0)).toFixed(2);
+}
+
+function setup_event_listeners() {
+  document.getElementById("price").addEventListener("keydown", check_keydown);
+  document.getElementById("percent_down").addEventListener("keydown",
+    check_keydown);
+  document.getElementById("int_rate").addEventListener("keydown",
+    check_keydown);
+  document.getElementById("term_years").addEventListener("keydown",
+    check_keydown);
+  document.getElementById("income").addEventListener("keydown", check_keydown);
+  document.getElementById("insurance").addEventListener("keydown",
+    check_keydown);
+  document.getElementById("tax_rate").addEventListener("keydown",
+    check_keydown);
+}
+
+function check_keydown(e) {
+  if (e.code === "Enter") {
+    update();
+  }
+}
+
+calculator = new FinanceCalculator();
+setup_event_listeners();
+update();

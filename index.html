@@ -5,44 +5,45 @@
     <table style="width:400px">
       <tr>
         <td>Home Price ($)</td>
-        <td><input type="text" id="price"></td>
+        <td><input type="text" id="price" value="1000000"></td>
       </tr>
       <tr>
         <td>Percent Down (0-1)</td>
-        <td><input type="text" id="percent_down"></td>
+        <td><input type="text" id="percent_down" value="0.2"></td>
       </tr>
       <tr>
         <td>Interest Rate (0-1)</td>
-        <td><input type="text" id="interest_rate"></td>
+        <td><input type="text" id="int_rate" value="0.03"></td>
       </tr>
       <tr>
         <td>Lifetime of Loan (years)</td>
-        <td><input type="text" id="term_years"></td>
+        <td><input type="text" id="term_years" value="30"></td>
       </tr>
       <tr>
         <td>Yearly Income Before Tax ($)</td>
-        <td><input type="text" id="income"></td>
+        <td><input type="text" id="income" value="200000"></td>
       </tr>
       <tr>
         <td>Yearly Home Insurance ($)</td>
-        <td><input type="text" id="insurance"></td>
+        <td><input type="text" id="insurance" value="1000"></td>
       </tr>
       <tr>
         <td>Tax Rate (0-1)</td>
-        <td><input type="text" id="tax_rate"></td>
+        <td><input type="text" id="tax_rate" value="0.01"></td>
       </tr>
     </table>
-    <hr style="height:2px;width:400px;text-align:left;margin-left:0;border-width:0;color:gray;background-color:gray">
-    <table>
+    <button onclick="update()" style="margin-top:20px;margin-bottom:20px;width:400px">Calculate</button>
+    <table style="width:400px">
       <tr>
         <td>Monthly Expense (PITI) ($)</td>
-        <td></td>
+        <td id="piti"></td>
       </tr>
       <tr>
         <td>Expense / Income (28% rule)</td>
-        <td></td>
+        <td id="expense_over_income"></td>
       </tr>
     </table>
-
   </body>
   </html>
+
+  <script src="src/mortgage.js"></script>
