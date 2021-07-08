@@ -1,19 +1,28 @@
 <!doctype html>
   <html lang="en">
+  <link rel="stylesheet" type="text/css" href="css/styles.css". /> 
+  <head>
+    <title>Mortgage Calculator</title>
+  </head>
   <body>
   	<h1>Mortgage Calculator</h1>
-    <table style="width:400px">
+    <table>
+      <colgroup>
+        <col span="1" style="width: 70%;">
+        <col span="1" style="width: 30%;">
+      </colgroup>
+      <tbody>
       <tr>
         <td>Home Price ($)</td>
-        <td><input type="text" id="price" value="1000000"></td>
+        <td><input type="text" id="price" value="1,000,000"></td>
       </tr>
       <tr>
-        <td>Percent Down (0-1)</td>
-        <td><input type="text" id="percent_down" value="0.2"></td>
+        <td>Percent Down (0-100)</td>
+        <td><input type="text" id="percent_down" value="20"></td>
       </tr>
       <tr>
-        <td>Interest Rate (0-1)</td>
-        <td><input type="text" id="int_rate" value="0.03"></td>
+        <td>Interest Rate (0-100)</td>
+        <td><input type="text" id="int_rate" value="3.0"></td>
       </tr>
       <tr>
         <td>Lifetime of Loan (years)</td>
@@ -21,26 +30,31 @@
       </tr>
       <tr>
         <td>Yearly Income Before Tax ($)</td>
-        <td><input type="text" id="income" value="200000"></td>
+        <td><input type="text" id="income" value="200,000"></td>
       </tr>
       <tr>
         <td>Yearly Home Insurance ($)</td>
-        <td><input type="text" id="insurance" value="1000"></td>
+        <td><input type="text" id="insurance" value="1,000"></td>
       </tr>
       <tr>
-        <td>Tax Rate (0-1)</td>
-        <td><input type="text" id="tax_rate" value="0.01"></td>
+        <td>Tax Rate (0-100)</td>
+        <td><input type="text" id="tax_rate" value="1.0"></td>
       </tr>
+    </tbody>
     </table>
-    <button onclick="update()" style="margin-top:20px;margin-bottom:20px;width:400px">Calculate</button>
-    <table style="width:400px">
+    <button onclick="update()">Calculate</button>
+    <table>
       <tr>
-        <td>Monthly Expense (PITI) ($)</td>
-        <td id="piti"></td>
+        <td>Initial Deposit</td>
+        <td id="deposit" class="resultStyle"></td>
       </tr>
       <tr>
-        <td>Expense / Income (28% rule)</td>
-        <td id="expense_over_income"></td>
+        <td>Monthly Expense (<a href="https://www.investopedia.com/terms/p/piti.asp" target="_blank">PITI</a>)</td>
+        <td id="piti" class="resultStyle"></td>
+      </tr>
+      <tr>
+        <td>Expense / Income (<a href="https://www.investopedia.com/terms/t/twenty-eight-thirty-six-rule.asp" target="_blank">28% rule</a>)</td>
+        <td id="expense_over_income" class="resultStyle"></td>
       </tr>
     </table>
   </body>

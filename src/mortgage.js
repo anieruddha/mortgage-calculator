@@ -174,40 +174,66 @@ class FinanceCalculator {
 }
 
 function update() {
-  calculator.price = Number(document.getElementById("price").value);
+  // Read.
+  calculator.price = removeCommas(document.getElementById("price").value);
   calculator.percent_down = Number(
-    document.getElementById("percent_down").value);
-  calculator.int_rate = Number(document.getElementById("int_rate").value);
+    document.getElementById("percent_down").value) / 100;
+  calculator.int_rate = Number(document.getElementById("int_rate").value) / 100;
   calculator.term_years = Number(document.getElementById("term_years").value);
-  calculator.income = Number(document.getElementById("income").value);
-  calculator.insurance = Number(document.getElementById("insurance").value);
-  calculator.tax_rate = Number(document.getElementById("tax_rate").value);
-  document.getElementById("piti").innerHTML = calculator.piti().toFixed(2);
-  document.getElementById("expense_over_income").innerHTML = (
-    calculator.piti() / (calculator.income / 12.0)).toFixed(2);
+  calculator.income = removeCommas(document.getElementById("income").value);
+  calculator.insurance = removeCommas(document.getElementById("insurance").value);
+  calculator.tax_rate = Number(document.getElementById("tax_rate").value) / 100;
+
+  // Update.
+  document.getElementById("price").value = numberWithCommas(calculator.price);
+  document.getElementById("income").value = numberWithCommas(calculator.income);
+  document.getElementById("insurance").value = numberWithCommas(
+    calculator.insurance);
+  document.getElementById("deposit").innerHTML = numberWithCommas(
+    "$" + calculator.price * calculator.percent_down);
+  document.getElementById("piti").innerHTML = numberWithCommas(
+    "$" + calculator.piti().toFixed(2));
+  const exp_over_inc = 100 * calculator.piti() / (calculator.income / 12.0);
+  const exp_over_income_cell = document.getElementById("expense_over_income")
+  exp_over_income_cell.innerHTML = exp_over_inc.toFixed(1) + '%';
+  if (exp_over_inc <= 28) {
+    exp_over_income_cell.style.color = 'rgb(0, 100, 0)';
+  } else {
+    exp_over_income_cell.style.color = 'rgb(210, 4, 45)';
+  }
+
+
 }
 
-function setup_event_listeners() {
-  document.getElementById("price").addEventListener("keydown", check_keydown);
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function removeCommas(x) {
+  return Number(x.replace(/\,/g,''));
+}
+
+function setupEventListeners() {
+  document.getElementById("price").addEventListener("keydown", checkKeydown);
   document.getElementById("percent_down").addEventListener("keydown",
-    check_keydown);
+    checkKeydown);
   document.getElementById("int_rate").addEventListener("keydown",
-    check_keydown);
+    checkKeydown);
   document.getElementById("term_years").addEventListener("keydown",
-    check_keydown);
-  document.getElementById("income").addEventListener("keydown", check_keydown);
+    checkKeydown);
+  document.getElementById("income").addEventListener("keydown", checkKeydown);
   document.getElementById("insurance").addEventListener("keydown",
-    check_keydown);
+    checkKeydown);
   document.getElementById("tax_rate").addEventListener("keydown",
-    check_keydown);
+    checkKeydown);
 }
 
-function check_keydown(e) {
+function checkKeydown(e) {
   if (e.code === "Enter") {
     update();
   }
 }
 
 calculator = new FinanceCalculator();
-setup_event_listeners();
+setupEventListeners();
 update();
