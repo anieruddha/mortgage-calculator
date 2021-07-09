@@ -16,6 +16,6 @@ tinkering with different inputs (home prices, interest rates, etc.). I built
 this tool to make home buying analysis faster, and it gave me an opportunity to
 get some reps with javascript and HTML.
 
-[Play around with it!](https://htmlpreview.github.io/?https://github.com/ronnyvotel/mortgage-calculator/blob/master/index.html)
+[Play around with it!](https://rawcdn.githack.com/ronnyvotel/mortgage-calculator/a05cd5831135a63ae62a753e19182d60adc8f30e/index.html)
 
 Let me know if anything else should be added.
