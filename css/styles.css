@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(173, 216, 230);
+  background-color: rgb(244, 222, 203);
 }
 
 h1 {
@@ -12,7 +12,7 @@ input {
   outline: 0;
   border-width: 0 0 2px;
   border-color: rgb(100,100,100);
-  background-color: rgb(173, 216, 230);
+  background-color: rgb(244, 222, 203);
   color: rgb(50, 50, 50);
   text-align: right;
   font-size: 26px;
@@ -51,7 +51,7 @@ button:hover {
 .resultStyle {
   outline: 0;
   border-width: 0 0 2px;
-  background-color: rgb(173, 216, 230);
+  background-color: rgb(244, 222, 203);
   text-align: right;
   font-size: 26px;
   font-family: Arial;
@@ -59,3 +59,6 @@ button:hover {
   border-color: rgb(100, 100, 100);
   color: rgb(50, 50, 50);
 }
+
+
+

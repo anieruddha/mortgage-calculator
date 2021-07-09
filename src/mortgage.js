@@ -244,30 +244,26 @@ function removeCommas(x) {
 }
 
 /**
- * Removes commas from long numbers (e.g. 3,123 > 3123).
+ * Sets up event listeners for the input text fields.
  */
 function setupEventListeners() {
-  document.getElementById('price').addEventListener('keydown', checkKeydown);
-  document.getElementById('percent_down').addEventListener('keydown',
-      checkKeydown);
-  document.getElementById('int_rate').addEventListener('keydown',
-      checkKeydown);
-  document.getElementById('term_years').addEventListener('keydown',
-      checkKeydown);
-  document.getElementById('income').addEventListener('keydown', checkKeydown);
-  document.getElementById('insurance').addEventListener('keydown',
-      checkKeydown);
-  document.getElementById('tax_rate').addEventListener('keydown',
-      checkKeydown);
-  document.getElementById('extra').addEventListener('keydown',
-      checkKeydown);
+  document.getElementById('price').addEventListener('keyup', checkKeyUp);
+  document.getElementById('percent_down').addEventListener('keyup', checkKeyUp);
+  document.getElementById('int_rate').addEventListener('keyup', checkKeyUp);
+  document.getElementById('term_years').addEventListener('keyup', checkKeyUp);
+  document.getElementById('income').addEventListener('keyup', checkKeyUp);
+  document.getElementById('insurance').addEventListener('keyup', checkKeyUp);
+  document.getElementById('tax_rate').addEventListener('keyup', checkKeyUp);
+  document.getElementById('extra').addEventListener('keyup', checkKeyUp);
 }
 
-function checkKeydown(e) {
-  if (e.code === 'Enter') {
+function checkKeyUp(e) {
+  if (e.keyCode === 13) { // Enter key.
+    console.log('in here');
     update();
   }
 }
+
 
 calculator = new FinanceCalculator();
 setupEventListeners();
