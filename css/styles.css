@@ -4,7 +4,7 @@ body {
 
 h1 {
   font-family: Arial;
-  color: rgb(0, 105, 139);
+  color: rgb(73, 39, 74);
 }
 
 input {
@@ -39,7 +39,7 @@ button {
   margin-bottom: 20px;
   font-family: Arial;
   font-size: 26px;
-  background-color: rgb(0, 140, 186);
+  background-color: rgb(148, 97, 142);
   color: white;
   border: none;
 }
