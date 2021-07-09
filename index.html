@@ -1,8 +1,8 @@
 <!doctype html>
   <html lang="en">
-  <link rel="stylesheet" type="text/css" href="css/styles.css". /> 
   <head>
     <title>Mortgage Calculator</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> 
   </head>
   <body>
   	<h1>Mortgage Calculator</h1>
@@ -40,6 +40,10 @@
         <td>Tax Rate (0-100)</td>
         <td><input type="text" id="tax_rate" value="1.0"></td>
       </tr>
+      <tr>
+        <td>Extra Monthly Expenses ($)</td>
+        <td><input type="text" id="extra" value="0"></td>
+      </tr>
     </tbody>
     </table>
     <button onclick="update()">Calculate</button>
@@ -49,8 +53,8 @@
         <td id="deposit" class="resultStyle"></td>
       </tr>
       <tr>
-        <td>Monthly Expense (<a href="https://www.investopedia.com/terms/p/piti.asp" target="_blank">PITI</a>)</td>
-        <td id="piti" class="resultStyle"></td>
+        <td>Monthly Expense</td>
+        <td id="total" class="resultStyle"></td>
       </tr>
       <tr>
         <td>Expense / Income (<a href="https://www.investopedia.com/terms/t/twenty-eight-thirty-six-rule.asp" target="_blank">28% rule</a>)</td>
