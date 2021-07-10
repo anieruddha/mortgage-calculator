@@ -18,4 +18,26 @@ get some reps with javascript and HTML.
 
 [Play around with it!](https://raw.githack.com/ronnyvotel/mortgage-calculator/master/index.html)
 
-Let me know if anything else should be added.
+Let me know if anything else should be added
+
+## A working Example
+
+Alice and Bob are in the market for a new home. They found a house on Redfin for
+**$850k**. They are pre-approved for a 30-year loan at a **2.9% interest rate**,
+and plan to make an initial **20% down payment**.
+
+The **property taxes on the home are 1%**, and **home insurance will cost
+$1200/yr**.
+
+Both Alice and Bob are employed, and their **gross yearly income (before taxes and
+deductions) is $210k**.
+
+Alice and Bob populate the information into the *Home Affordability Calculator*
+and determine that after their **down payment of $170k**, they will have a
+**monthly payment (which includes principle, interest, taxes, and insurance) of
+$3683.70**.
+
+![Example Calculation]('media/example.png')
+
+That seems like a lot of money, but it accounts for only **20.8% of their
+income**, safely below the recommended ceiling of 28%.
